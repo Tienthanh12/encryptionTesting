@@ -18,6 +18,19 @@ using namespace std;
 
 
 
+void display() {
+    cout << "Welcome to the encryption testing site!" << endl;
+    cout << "In this testing site, we are gonna have four different tests for an eStream:" << endl;
+    cout << "1. Encryption rate for long streams: The testing framework measures the encryption rate by encrypting a long stream in chunks of about 4KB. The encryption speed, in cycles/byte, is calculated by measuring the number of bytes encrypted in 250 µsec." << endl;
+    cout << "!) Note that the time to setup the key or the IV is not considered in this test." << endl;
+    cout << "2. Packet encryption rate: While a block cipher is likely to be a better choice when encrypting very short packets, it is still interesting to determine at which length a stream cipher starts to take the lead. " << endl;
+    cout << "The packet encryption rate is measured by applying with the packets of different lengths. Each call includes a separate IV setup and and the packet lengths (40, 576, and 1500 bytes) were chosen to be representative for the traffic seen on the Internet [JTC-003]." << endl;
+    cout << "3. Agility : The testing framework performs the following test: it first initiates a large number of sessions (filling 16MB of RAM ), and then encrypts streams of plaintext in short blocks of around 256 bytes" << endl;
+    cout << "4. Key and IV setup: The last test in the testing framework separately measures the efficiency of the key setup and the IV setup" << endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
+}
 
 double CPUspeed(){
     unsigned long long start, end;
@@ -396,19 +409,7 @@ void MickeytestingFrameWork(){
 }
 
 
-void display() {
-    cout << "Welcome to the encryption testing site!" << endl;
-    cout << "In this testing site, we are gonna have four different tests for an eStream:" << endl;
-    cout << "1. Encryption rate for long streams: The testing framework measures the encryption rate by encrypting a long stream in chunks of about 4KB. The encryption speed, in cycles/byte, is calculated by measuring the number of bytes encrypted in 250 µsec." << endl;
-    cout << "!) Note that the time to setup the key or the IV is not considered in this test." << endl;
-    cout << "2. Packet encryption rate: While a block cipher is likely to be a better choice when encrypting very short packets, it is still interesting to determine at which length a stream cipher starts to take the lead. " << endl;
-    cout << "The packet encryption rate is measured by applying with the packets of different lengths. Each call includes a separate IV setup and and the packet lengths (40, 576, and 1500 bytes) were chosen to be representative for the traffic seen on the Internet [JTC-003]." << endl;
-    cout << "3. Agility : The testing framework performs the following test: it first initiates a large number of sessions (filling 16MB of RAM ), and then encrypts streams of plaintext in short blocks of around 256 bytes" << endl;
-    cout << "4. Key and IV setup: The last test in the testing framework separately measures the efficiency of the key setup and the IV setup" << endl;
-    cout << endl;
-    cout << endl;
-    cout << endl;
-}
+
 
 int main() {
     display();
